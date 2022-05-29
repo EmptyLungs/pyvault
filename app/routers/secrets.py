@@ -1,6 +1,6 @@
-from fastapi.routing import APIRouter
-from fastapi.responses import JSONResponse
 from fastapi import status
+from fastapi.responses import JSONResponse
+from fastapi.routing import APIRouter
 
 router = APIRouter(prefix='/secrets')
 

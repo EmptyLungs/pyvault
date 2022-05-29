@@ -1,6 +1,6 @@
-from fastapi import FastAPI
 import sentry_sdk
 import uvicorn
+from fastapi import FastAPI
 from tortoise import Tortoise
 
 from .configure import get_settings
@@ -19,10 +19,7 @@ app.include_router(health_router)
 
 @app.on_event('startup')
 async def init_tortoise():
-    await Tortoise.init(
-        db_url=settings.postgres.url,
-        modules=dict(models=['app.models'])
-    )
+    await Tortoise.init(db_url=settings.postgres.url, modules=dict(models=['app.models']))
     await Tortoise.generate_schemas()
 
 

@@ -1,4 +1,4 @@
-from pydantic import BaseSettings, BaseModel, Field
+from pydantic import BaseModel, BaseSettings, Field
 
 
 class ServerSettings(BaseSettings):
