@@ -27,7 +27,6 @@ jobs:
           poetry install --no-root --no-interaction
       - name: Generate Report
         run: |
-          poetry shell
-          pytest --cov=app tests/
+          poetry run pytest --cov=app tests/
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
