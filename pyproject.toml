@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "pyvault"
+version = "0.1.0"
+description = ""
+authors = ["Dmitry Pavlenko <dmitryrint@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.78.0"
+loguru = "^0.6.0"
+sentry-sdk = "^1.5.12"
+uvicorn = "^0.17.6"
+tortoise-orm = {version = "^0.19.1", extras = ["asyncpg"]}
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+requests = "^2.27.1"
+pytest-mockito = "^0.0.4"
+pre-commit = "^2.19.0"
+pytest-asyncio = "^0.18.3"
+safety = "^1.10.3"
+isort = "^5.10.1"
+tox = "^3.25.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+force_grid_wrap = 0
+multi_line_output = 3
+use_parentheses = true
+include_trailing_comma = true
