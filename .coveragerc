@@ -6,6 +6,7 @@ omit =
     docs/*
     app/utils/*
     app/__main__.py
+    app/configure.py
 
 [report]
 # Regexes for lines to exclude from consideration
