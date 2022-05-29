@@ -2,31 +2,31 @@ from fastapi.routing import APIRouter
 from fastapi.responses import JSONResponse
 from fastapi import status
 
-router = APIRouter(prefix='/namespaces')
+router = APIRouter(prefix='/secrets')
 
 
 @router.get(
     '',
-    summary='Returns list of namespaces',
+    summary='Returns list of secrets',
     response_class=JSONResponse,
 )
-def list_namespaces():
+def list_secrets():
     return JSONResponse(status_code=status.HTTP_200_OK, content={})
 
 
 @router.post(
     '',
-    summary='Creates namespace',
+    summary='Creates secret',
     response_class=JSONResponse,
 )
-def create_namesace():
+def create_secret():
     return JSONResponse(status_code=status.HTTP_201_CREATED, content={})
 
 
 @router.delete(
-    '/{namespace_id}',
-    summary='Deletes namespace',
+    '/{secret_id}',
+    summary='Deletes secret',
     response_class=JSONResponse,
 )
-def delete_namespace(namespace_id: int):
+def delete_secret(secret_id: int):
     return JSONResponse(status_code=status.HTTP_204_NO_CONTENT, content={})

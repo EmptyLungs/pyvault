@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 
 from app.routers.health import router as health_router
 from app.routers.namespaces import router as namespaces_router
+from app.routers.secrets import router as secrets_router
 from app.settings import ServerSettings
 
 
@@ -16,6 +17,7 @@ def fastapi_app_client(settings):
 
     app.include_router(health_router)
     app.include_router(namespaces_router)
+    app.include_router(secrets_router)
 
     client = TestClient(app)
     client.headers['Content-Type'] = 'application/json'
